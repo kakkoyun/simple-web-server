@@ -1,0 +1,23 @@
+version: '3'
+services:
+  grafana:
+    image: kamon/grafana_graphite
+    logging:
+      options:
+        max-size: '100k'
+        max-file: '20'
+    ports:
+      - 42080:80
+      - 42081:81
+      - 49125:18125/udp
+      - 49126:18126
+  prometheus:
+    image: 'prom/prometheus:v2.8.1'
+    ports:
+      - 9090:9090
+    volumes:
+      - ./container/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  app:
+    build: .
+    ports:
+      - 4000:4000

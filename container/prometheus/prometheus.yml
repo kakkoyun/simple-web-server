@@ -1,0 +1,21 @@
+global:
+  scrape_interval:     10s
+  # evaluation_interval: 15s
+  # external_labels:
+  #     monitor: 'prometheus'
+# Load and evaluate rules in this file every 'evaluation_interval' seconds.
+rule_files:
+  # - "first.rules"
+  # - "second.rules"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    # scrape_interval: 10s
+    # scrape_timeout: 5s
+    static_configs:
+      - targets: ['localhost:9090']
+  # - job_name: 'simple-web-server'
+  #   scrape_interval: 10s
+  #   scrape_timeout: 5s
+  #   static_configs:
+  #     - targets: ['scooter_build:4000']
