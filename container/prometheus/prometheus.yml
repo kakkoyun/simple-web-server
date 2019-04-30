@@ -19,3 +19,15 @@ scrape_configs:
   #   scrape_timeout: 5s
   #   static_configs:
   #     - targets: ['scooter_build:4000']
+
+
+# scrape_configs:
+#  - job_name: pushgateway
+#    honor_labels: true
+#    static_configs:
+#     - targets:
+#       - localhost:9091
+
+# alert manager
+# node exporter (should not run in a container)
+# cadvisor ?
